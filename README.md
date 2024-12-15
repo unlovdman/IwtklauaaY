@@ -4,5 +4,5 @@
 
 ## Introduction
 
-This project is born out of a collaboration of passion and love. It represents the collective effort of individuals who share a common vision and dedication to creating something meaningful. We believe that when people come together with a shared purpose, amazing things can happen.
+This project is born out of a collaboration of my passion and love. It represents the collective effort of individuals who share a common vision and dedication to creating something meaningful. I believe that when people come together with a shared purpose, amazing things can happen.
 
