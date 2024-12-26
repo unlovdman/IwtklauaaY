@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+    button, 
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .reduce-motion {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .smooth-scroll {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-menu {
+        height: calc(100vh - 4rem);
+        overflow-y: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} 
