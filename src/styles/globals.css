@@ -1,0 +1,48 @@
+.glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(var(--primary-rgb), 0.8);
+}
+
+.glass-dark {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(var(--primary-rgb), 0.95);
+}
+
+:root {
+    /* Ruby Red */
+    --theme-red-primary: #EF4444;
+    --theme-red-secondary: #B91C1C;
+    --theme-red-gradient: linear-gradient(135deg, #EF4444, #B91C1C);
+    
+    /* Ocean Blue */
+    --theme-blue-primary: #3B82F6;
+    --theme-blue-secondary: #1D4ED8;
+    --theme-blue-gradient: linear-gradient(135deg, #3B82F6, #1D4ED8);
+    
+    /* Forest Green */
+    --theme-green-primary: #10B981;
+    --theme-green-secondary: #047857;
+    --theme-green-gradient: linear-gradient(135deg, #10B981, #047857);
+    
+    /* Royal Purple */
+    --theme-purple-primary: #8B5CF6;
+    --theme-purple-secondary: #6D28D9;
+    --theme-purple-gradient: linear-gradient(135deg, #8B5CF6, #6D28D9);
+    
+    /* Sunset Orange */
+    --theme-sunset-primary: #FF6B6B;
+    --theme-sunset-secondary: #FF8E53;
+    --theme-sunset-gradient: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    
+    /* Midnight */
+    --theme-midnight-primary: #2C3E50;
+    --theme-midnight-secondary: #3498DB;
+    --theme-midnight-gradient: linear-gradient(135deg, #2C3E50, #3498DB);
+    
+    /* Rose Gold */
+    --theme-rose-primary: #E8BCB9;
+    --theme-rose-secondary: #B76E79;
+    --theme-rose-gradient: linear-gradient(135deg, #E8BCB9, #B76E79);
+} 

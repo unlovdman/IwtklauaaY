@@ -1,1 +1,12 @@
-RedirectMatch ^/$ /resources/views/homepage.php 
+# Root .htaccess
+Options -Indexes
+RewriteEngine On
+RewriteBase /lwtklauaaY/
+
+# Redirect root to public directory
+RewriteRule ^$ public/ [L]
+
+# Redirect all other requests to public directory
+RewriteCond %{REQUEST_URI} !^/lwtklauaaY/public/
+RewriteRule (.*) public/$1 [L] 
+
