@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I want to know,learn and understand anything about You Journey - Learn & Connect</title>
+    <title>IWTKLAUAAY - Learn & Connect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -485,6 +485,141 @@
                 margin-top: 70px;
             }
         }
+
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 8px 32px rgba(31, 38, 135, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            width: 280px;
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 12px 40px rgba(31, 38, 135, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .album-art {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .album-art.spinning {
+            animation: spin 8s linear infinite;
+        }
+
+        .album-art.paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .music-info {
+            flex-grow: 1;
+        }
+
+        .song-title {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .progress-bar {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1.5px;
+            position: relative;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 1.5px;
+            transition: width 0.1s linear;
+        }
+
+        .mute-btn {
+            background: transparent;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 5px;
+            transition: all 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mute-btn:hover {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mute-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .mute-btn.muted i {
+            transform: scale(0.8);
+        }
+
+        /* Add vinyl effect to album art */
+        .album-art::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30%;
+            height: 30%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body class="bg-[var(--bg-color)] transition-all duration-500">
@@ -608,13 +743,30 @@
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="hover:text-opacity-80"><i class="fab fa-facebook text-2xl"></i></a>
                 <a href="#" class="hover:text-opacity-80"><i class="fab fa-twitter text-2xl"></i></a>
-                <a href="#" class="hover:text-opacity-80"><i class="fab fa-instagram text-2xl"></i></a>
-                <a href="#" class="hover:text-opacity-80"><i class="fab fa-youtube text-2xl"></i></a>
+                <a href="https://www.instagram.com/unlovdman/" class="hover:text-opacity-80"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="https://www.youtube.com/@unlovdman/" class="hover:text-opacity-80"><i class="fab fa-youtube text-2xl"></i></a>
             </div>
             <p>© 2024 IWTKLAUAAY by unlovdman. All rights reserved.</p>
             <p class="mt-2 italic">"Words are easy, like the wind; Faithful friends are hard to find"</p>
         </div>
     </footer>
+
+    <div class="music-player">
+        <div class="album-art spinning paused">
+            <img src="resources/img/AY.jpg" 
+                 alt="Album Art"
+                 id="albumArt">
+        </div>
+        <div class="music-info">
+            <div class="song-title" id="songTitle">AY</div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <button class="mute-btn muted" id="muteBtn">
+            <i class="fas fa-volume-mute" id="muteIcon"></i>
+        </button>
+    </div>
 
     <script>
         //intirial AOS
@@ -656,6 +808,62 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = new Audio('resources/music/AY.mp3');
+            const muteBtn = document.getElementById('muteBtn');
+            const muteIcon = document.getElementById('muteIcon');
+            const albumArt = document.querySelector('.album-art');
+            const progress = document.getElementById('progress');
+            let isMuted = true;
+
+            // audio.volume = 0.9;
+            audio.volume = 0.5;
+            
+            muteBtn.classList.add('muted');
+            albumArt.classList.add('paused');
+            muteIcon.className = 'fas fa-volume-mute';
+            
+            muteBtn.addEventListener('click', () => {
+                isMuted = !isMuted;
+                if (isMuted) {
+                    audio.pause();
+                    muteIcon.className = 'fas fa-volume-mute';
+                    albumArt.classList.add('paused');
+                } else {
+                    audio.play().then(() => {
+                        audio.volume = 0.5;
+                        muteIcon.className = 'fas fa-volume-up';
+                        albumArt.classList.remove('paused');
+                    }).catch(e => {
+                        console.log("Playback failed:", e);
+                        isMuted = true;
+                        muteIcon.className = 'fas fa-volume-mute';
+                        albumArt.classList.add('paused');
+                    });
+                }
+                muteBtn.classList.toggle('muted');
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                const progressPercent = (audio.currentTime / audio.duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+            });
+
+            audio.addEventListener('ended', () => {
+                audio.currentTime = 0;
+                audio.play().then(() => {
+                    audio.volume = 0.5; 
+                }).catch(e => console.log("Replay failed:", e));
+            });
+
+            document.getElementById('progressBar').addEventListener('click', (e) => {
+                const width = e.currentTarget.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
             });
         });
     </script>

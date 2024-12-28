@@ -1,4 +1,3 @@
 <?php
 
-// Display the homepage
-require __DIR__.'/../resources/views/homepage.php';
+require_once __DIR__ . '/../resources/views/homepage.php';
