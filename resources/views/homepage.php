@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         .theme-red {
             --primary-color: #EF4444;
@@ -51,6 +52,24 @@
             --secondary-color: #38A3FF;
             --bg-color: #F0F9FF;
             --gradient: linear-gradient(135deg, #4FB4FF, #0085FF);
+        }
+        .theme-retro {
+            --primary-color: #000000;
+            --secondary-color: #333333;
+            --bg-color: #FFFFFF;
+            --gradient: linear-gradient(135deg, #000000, #333333);
+        }
+        .theme-japanese {
+            --primary-color: #D64545;
+            --secondary-color: #1A1A1A;
+            --bg-color: #F5F5F5;
+            --gradient: linear-gradient(135deg, #D64545, #1A1A1A);
+        }
+        .theme-vintage {
+            --primary-color: #8B7355;
+            --secondary-color: #6B4423;
+            --bg-color: #F5E6D3;
+            --gradient: linear-gradient(135deg, #8B7355, #6B4423);
         }
 
         .theme-switcher {
@@ -607,7 +626,7 @@
             transform: scale(0.8);
         }
 
-        /* Add vinyl effect to album art */
+        /* vinyl bro */
         .album-art::after {
             content: '';
             position: absolute;
@@ -619,6 +638,824 @@
             background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .theme-romantic-vintage {
+            --primary-color: #D4A5A5;
+            --secondary-color: #9E7676;
+            --bg-color: #F9F5F6;
+            --gradient: linear-gradient(135deg, #D4A5A5, #9E7676);
+        }
+
+        .theme-romantic-vintage .hero-pattern {
+            background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239E7676" fill-opacity="0.1"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .theme-romantic-vintage .feature-card {
+            border: 1px solid rgba(158, 118, 118, 0.2);
+            box-shadow: 
+                0 10px 20px rgba(158, 118, 118, 0.1),
+                0 0 0 1px rgba(158, 118, 118, 0.05);
+        }
+
+        .theme-romantic-vintage .feature-card:hover {
+            border-color: rgba(158, 118, 118, 0.4);
+        }
+
+        .theme-romantic-vintage .mysterious-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .theme-romantic-vintage .logo-container::before {
+            content: '❀';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            animation: floatFlower 3s ease-in-out infinite;
+        }
+
+        .theme-romantic-vintage .logo-container::after {
+            content: '✿';
+            position: absolute;
+            bottom: -5px;
+            left: -5px;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            animation: floatFlower 3s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatFlower {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(3px, -3px) rotate(15deg);
+            }
+        }
+
+        .theme-romantic-vintage .nav-link:hover {
+            text-shadow: 2px 2px 4px rgba(158, 118, 118, 0.3);
+        }
+
+        .theme-romantic-vintage .feature-card i {
+            position: relative;
+        }
+
+        .theme-romantic-vintage .feature-card i::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.2;
+            filter: blur(10px);
+            transform: scale(1.5);
+            z-index: -1;
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                transform: scale(1.5);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(2);
+                opacity: 0.3;
+            }
+        }
+
+        .theme-about-you {
+            --primary-color: #8E9AAF;
+            --secondary-color: #CBC0D3;
+            --bg-color: #EFD3D7;
+            --gradient: linear-gradient(135deg, #8E9AAF, #CBC0D3);
+        }
+
+        .theme-about-you .hero-pattern {
+            background: linear-gradient(
+                rgba(142, 154, 175, 0.1),
+                rgba(203, 192, 211, 0.1)
+            ),
+            url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .theme-about-you .mysterious-text {
+            animation: dreamyGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes dreamyGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(142, 154, 175, 0.5),
+                             0 0 20px rgba(203, 192, 211, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(142, 154, 175, 0.8),
+                             0 0 40px rgba(203, 192, 211, 0.6);
+            }
+        }
+
+        .theme-about-you .feature-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(203, 192, 211, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .theme-about-you .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 
+                0 10px 20px rgba(142, 154, 175, 0.2),
+                0 0 0 1px rgba(203, 192, 211, 0.1);
+        }
+
+        .theme-about-you .hero-pattern::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(142, 154, 175, 0.1), rgba(203, 192, 211, 0.1)),
+                url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30zm-30 0c0 16.569-13.431 30-30 30v-60c16.569 0 30 13.431 30 30z"/%3E%3C/g%3E%3C/svg%3E');
+            pointer-events: none;
+            z-index: -1;
+            animation: fadeInOut 10s ease-in-out infinite;
+        }
+
+        .theme-about-you .logo-container {
+            position: relative;
+            overflow: visible;
+        }
+
+        .theme-about-you .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                transparent 30%,
+                rgba(142, 154, 175, 0.1) 31%,
+                rgba(142, 154, 175, 0.1) 32%,
+                transparent 33%
+            );
+            transform: translate(-50%, -50%);
+            animation: vinylSpin 4s linear infinite;
+        }
+
+        .theme-about-you .feature-card {
+            transform: rotate(-2deg);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(203, 192, 211, 0.5);
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .theme-about-you .feature-card:nth-child(2n) {
+            transform: rotate(2deg);
+        }
+
+        .theme-about-you .feature-card:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.02);
+        }
+
+        .theme-about-you .mysterious-text {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGradient 8s linear infinite;
+        }
+
+        @keyframes textGradient {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .theme-about-you .hero-pattern::after {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(142, 154, 175, 0.1) 0%, transparent 10%),
+                radial-gradient(circle at 80% 70%, rgba(203, 192, 211, 0.1) 0%, transparent 10%);
+            animation: floatBackground 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatBackground {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-2%, -2%);
+            }
+        }
+
+        .theme-about-you nav a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-about-you nav a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .theme-about-you nav a:hover::before {
+            transform: translateX(100%);
+        }
+
+        .theme-about-you .music-player {
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(31, 38, 135, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-about-you .album-art {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-about-you .album-art::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transform: skewX(-25deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+
+        .theme-about-you .hero-pattern {
+            position: relative;
+        }
+
+        .theme-about-you .hero-pattern::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 1%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 1%),
+                radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 1%);
+            animation: floatDust 15s linear infinite;
+        }
+
+        @keyframes floatDust {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        .theme-about-you .feature-card i {
+            transition: all 0.5s ease;
+        }
+
+        .theme-about-you .feature-card:hover i {
+            transform: scale(1.2);
+            color: var(--primary-color);
+            filter: drop-shadow(0 0 10px rgba(142, 154, 175, 0.5));
+        }
+
+
+        .theme-about-you .hero-pattern {
+            position: relative;
+        }
+
+        .theme-about-you .hero-pattern::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 1%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 1%),
+                radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 1%);
+            animation: floatDust 15s linear infinite;
+        }
+
+        .theme-about-you .hero-pattern::after {
+            content: '🤟';
+            position: fixed;
+            bottom: -20px;
+            font-size: 1.5rem;
+            color: rgba(142, 154, 175, 0.3);
+            animation: floatSignUp 10s linear infinite;
+        }
+
+        @keyframes floatSignUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .theme-about-you .feature-card i.fa-hands {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .theme-about-you .feature-card:hover::after {
+            content: '❤ Learn for Love ❤';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: fadeInMessage 0.3s forwards;
+        }
+
+        @keyframes fadeInMessage {
+            to {
+                opacity: 1;
+                bottom: -30px;
+            }
+        }
+
+        .theme-about-you .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-about-you .feature-card::before {
+            content: '👋 ❤️ 🤟 🤲';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            font-size: 4rem;
+            opacity: 0.03;
+            transform: rotate(-45deg);
+            pointer-events: none;
+        }
+
+        .theme-about-you .mysterious-text:hover {
+            animation: romanticGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes romanticGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(142, 154, 175, 0.5),
+                             0 0 20px rgba(203, 192, 211, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(142, 154, 175, 0.8),
+                             0 0 40px rgba(203, 192, 211, 0.6);
+            }
+        }
+
+        .theme-about-you .logo-container::before,
+        .theme-about-you .logo-container::after {
+            content: '❤';
+            position: absolute;
+            font-size: 1rem;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: floatHeart 3s ease-in-out infinite;
+        }
+
+        .theme-about-you .logo-container::before {
+            top: -10px;
+            right: -10px;
+        }
+
+        .theme-about-you .logo-container::after {
+            bottom: -10px;
+            left: -10px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatHeart {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-10px) scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        .theme-about-you .nav-link {
+            position: relative;
+        }
+
+        .theme-about-you .nav-link::after {
+            content: '👋 → 🤟';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-about-you .nav-link:hover::after {
+            opacity: 0.7;
+        }
+
+        .theme-about-you .feature-card:hover i {
+            position: relative;
+        }
+
+        .theme-about-you .feature-card:hover i::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle at center,
+                rgba(239, 211, 215, 0.2) 0%,
+                transparent 70%);
+            animation: pulseConnection 2s infinite;
+        }
+
+        @keyframes pulseConnection {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+
+        .theme-about-you h2 span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .theme-about-you h2 span::after {
+            content: '💝';
+            position: absolute;
+            font-size: 0.5em;
+            top: -10px;
+            right: -15px;
+            animation: heartPulse 2s infinite;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 0.9; }
+        }
+
+        .theme-about-you .feature-card:hover::before {
+            content: '🤟 → ❤️';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            opacity: 0;
+            animation: signFadeIn 0.5s forwards;
+        }
+
+        @keyframes signFadeIn {
+            to {
+                opacity: 1;
+                top: -30px;
+            }
+        }
+
+        .theme-about-you .nav-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-color),
+                transparent
+            );
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .theme-about-you .nav-link:hover::before {
+            transform: scaleX(1);
+        }
+
+        .theme-about-you .hero-section::after {
+            content: '♪ ❤️ ♫';
+            position: fixed;
+            font-size: 1.2rem;
+            color: rgba(142, 154, 175, 0.2);
+            animation: floatMusicLove 15s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatMusicLove {
+            0% {
+                transform: translate(0, 100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translate(0, -100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .theme-about-you .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, 
+                var(--primary-color), 
+                transparent, 
+                var(--secondary-color)
+            ) border-box;
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) padding-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-about-you .feature-card:hover::after {
+            opacity: 1;
+        }
+
+        .theme-about-you .progress-indicator {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-about-you .progress-indicator::before {
+            content: '👋 → 🤲 → 🤟 → ❤️';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            animation: progressFlow 10s linear infinite;
+        }
+
+        @keyframes progressFlow {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .theme-about-you .love-message::before {
+            content: 'Learning to sign, just for you...';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(30) infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .theme-about-you .feature-card i.fa-heart,
+        .theme-about-you .feature-card i.fa-hands-helping {
+            animation: iconHeartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes iconHeartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .theme-about-you .feature-card:hover::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(
+                circle at center,
+                rgba(239, 211, 215, 0.1) 0%,
+                transparent 70%
+            );
+            animation: connectionPulse 2s infinite;
+        }
+
+        @keyframes connectionPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.2;
+            }
+        }
+
+        .theme-about-you .hero-pattern::before {
+            content: 'Do you think I have forgotten?';
+            position: fixed;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: rgba(142, 154, 175, 0.1);
+            white-space: nowrap;
+            animation: driftLyrics 20s linear infinite;
+        }
+
+        @keyframes driftLyrics {
+            0% {
+                transform: translateX(-100%) translateY(30vh);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateX(100%) translateY(30vh);
+                opacity: 0;
+            }
+        }
+
+        .theme-about-you .hero-pattern::after {
+            content: 'I think about you all the time';
+            position: fixed;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: rgba(142, 154, 175, 0.1);
+            white-space: nowrap;
+            animation: driftLyricsReverse 20s linear infinite;
+            animation-delay: 10s;
+        }
+
+        @keyframes driftLyricsReverse {
+            0% {
+                transform: translateX(100%) translateY(60vh);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateX(-100%) translateY(60vh);
+                opacity: 0;
+            }
+        }
+
+        .theme-about-you .feature-card:hover::before {
+            content: 'And I would find you if I was dying';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            white-space: nowrap;
+            opacity: 0;
+            animation: fadeInLyric 0.5s forwards;
+        }
+
+        @keyframes fadeInLyric {
+            to {
+                opacity: 0.7;
+                top: -30px;
+            }
+        }
+
+        .theme-about-you .mysterious-text::after {
+            content: 'I think about you all the time';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-about-you .mysterious-text:hover::after {
+            opacity: 0.7;
+        }
+
+        .theme-about-you .hero-section::before {
+            content: 'About you...';
+            position: fixed;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: rgba(142, 154, 175, 0.05);
+            animation: floatMainLyric 15s ease-in-out infinite;
+        }
+
+        @keyframes floatMainLyric {
+            0%, 100% {
+                transform: translateY(20vh) translateX(-10vw);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(40vh) translateX(10vw);
+                opacity: 0.1;
+            }
+        }
+
+        .theme-about-you .feature-card:hover::after {
+            content: 'I think about you';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: revealLyric 0.5s forwards;
+        }
+
+        @keyframes revealLyric {
+            to {
+                opacity: 0.7;
+                bottom: -20px;
+            }
+        }
+
+        #songTitle {
+            white-space: pre-line;
+            line-height: 1.3;
+            text-align: left;
         }
     </style>
 </head>
@@ -730,11 +1567,21 @@
         <div class="theme-options">
             <button onclick="setTheme('theme-red')" class="theme-button" data-theme="Ruby Red" style="background: linear-gradient(135deg, #EF4444, #B91C1C)"></button>
             <button onclick="setTheme('theme-scarlett')" class="theme-button" data-theme="Scarlet" style="background: linear-gradient(135deg, #991B1B, #BE123C)"></button>
-            <button onclick="setTheme('theme-purple')" class="theme-button" data-theme="Royal Purple" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9)"></button>
-            <button onclick="setTheme('theme-blue')" class="theme-button" data-theme="Ocean Blue" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8)"></button>
-            <button onclick="setTheme('theme-green')" class="theme-button" data-theme="Forest Green" style="background: linear-gradient(135deg, #10B981, #047857)"></button>
             <button onclick="setTheme('theme-sunset')" class="theme-button" data-theme="Sunset" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53)"></button>
             <button onclick="setTheme('theme-ocean')" class="theme-button" data-theme="Azure" style="background: linear-gradient(135deg, #4FB4FF, #0085FF)"></button>
+            <button onclick="setTheme('theme-retro')" class="theme-button" data-theme="Retro B&W" style="background: linear-gradient(135deg, #000000, #333333)"></button>
+            <button onclick="setTheme('theme-japanese')" class="theme-button" data-theme="Japanese" style="background: linear-gradient(135deg, #D64545, #1A1A1A)"></button>
+            <button onclick="setTheme('theme-vintage')" class="theme-button" data-theme="Vintage" style="background: linear-gradient(135deg, #8B7355, #6B4423)"></button>
+            <button onclick="setTheme('theme-romantic-vintage')" 
+                    class="theme-button" 
+                    data-theme="Romantic Vintage" 
+                    style="background: linear-gradient(135deg, #D4A5A5, #9E7676)">
+            </button>
+            <button onclick="setTheme('theme-about-you')" 
+                    class="theme-button" 
+                    data-theme="About You" 
+                    style="background: linear-gradient(135deg, #8E9AAF, #CBC0D3)">
+            </button>
         </div>
     </div>
 
@@ -812,20 +1659,29 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            const audio = new Audio('resources/music/AY.mp3');
+            const audio = new Audio();
             const muteBtn = document.getElementById('muteBtn');
             const muteIcon = document.getElementById('muteIcon');
-            const albumArt = document.querySelector('.album-art');
+            const albumArt = document.getElementById('albumArt');
             const progress = document.getElementById('progress');
             let isMuted = true;
 
-            // audio.volume = 0.9;
-            audio.volume = 0.5;
-            
-            muteBtn.classList.add('muted');
-            albumArt.classList.add('paused');
-            muteIcon.className = 'fas fa-volume-mute';
-            
+            function handleThemeChange(theme) {
+                if (theme === 'theme-about-you') {
+                    audio.src = 'resources/music/The 1975 - About You (Official).mp3';
+                    albumArt.src = 'resources/img/The 1975 - About You (Official).jpg';
+                    document.getElementById('songTitle').textContent = '"About You"\n _ The 1975 _';
+                }
+            }
+
+            const themeButtons = document.querySelectorAll('.theme-button');
+            themeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const theme = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    handleThemeChange(theme);
+                });
+            });
+
             muteBtn.addEventListener('click', () => {
                 isMuted = !isMuted;
                 if (isMuted) {
@@ -852,13 +1708,6 @@
                 progress.style.width = `${progressPercent}%`;
             });
 
-            audio.addEventListener('ended', () => {
-                audio.currentTime = 0;
-                audio.play().then(() => {
-                    audio.volume = 0.5; 
-                }).catch(e => console.log("Replay failed:", e));
-            });
-
             document.getElementById('progressBar').addEventListener('click', (e) => {
                 const width = e.currentTarget.clientWidth;
                 const clickX = e.offsetX;
@@ -866,6 +1715,50 @@
                 audio.currentTime = (clickX / width) * duration;
             });
         });
+
+        function initThemeMusic() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const audio = document.querySelector('audio');
+            const albumArt = document.querySelector('.album-art img');
+            
+            themeToggle.addEventListener('click', () => {
+                if (document.body.classList.contains('theme-about-you')) {
+                    audio.src = '/resources/music/The 1975 - About You (Official).mp3';
+                    albumArt.src = '/resources/img/The 1975 - About You (Official).jpg';
+                    initLyricSync();
+                }
+            });
+        }
+
+        function initLyricSync() {
+            const audio = document.querySelector('audio');
+            const lyricDisplay = document.querySelector('.lyric-display');
+            
+            const lyricTimings = [
+                { time: 0, id: 'intro' },
+                { time: 30, id: 'verse1' },
+                { time: 60, id: 'chorus' },
+            ];
+
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                updateLyricDisplay(currentTime, lyricTimings);
+            });
+        }
+
+        function updateLyricDisplay(currentTime, timings) {
+            const lyricDisplay = document.querySelector('.lyric-display');
+            const currentTiming = timings.find(timing => 
+                timing.time <= currentTime && 
+                (!timings[timings.indexOf(timing) + 1] || 
+                 timings[timings.indexOf(timing) + 1].time > currentTime)
+            );
+            
+            if (currentTiming) {
+                lyricDisplay.dataset.section = currentTiming.id;
+                lyricDisplay.classList.add('active');
+            }
+        }
     </script>
 </body>
 </html> 
